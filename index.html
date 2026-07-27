@@ -14,14 +14,14 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white min-h-screen flex flex-col justify-between relative overflow-hidden">
+<body class="bg-gradient-to-br from-indigo-950 via-blue-900 to-slate-900 text-white min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
     <!-- Ornamen Lingkaran Latar Belakang (Efek Futuristik) -->
     <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-40"></div>
     <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
 
     <!-- Header / Navbar -->
-    <header class="w-full py-6 px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto relative z-10 gap-4">
+    <header class="w-full py-5 lg:py-6 px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto relative z-10 gap-4">
         <div class="flex items-center space-x-3">
             <span class="bg-gradient-to-r from-amber-400 to-amber-300 text-indigo-950 font-extrabold px-3 py-1 rounded-lg text-xl shadow-lg shadow-amber-400/20">GNN</span>
             <span class="font-bold text-xl md:text-2xl tracking-wide">MAHIRA</span>
@@ -29,12 +29,21 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-1 max-w-7xl mx-auto px-6 py-8 md:py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+    <main class="flex-1 w-full max-w-7xl mx-auto px-6 py-10 lg:py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
         
         <!-- Sisi Kiri: Copywriting & Tagline -->
-        <div class="space-y-8 text-center lg:text-left">
+        <div class="space-y-8 text-center lg:text-left order-2 lg:order-1">
             <div class="space-y-4">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                <!-- Logo -->
+                <div class="flex justify-center lg:justify-start">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 border border-white/20 shadow-lg">
+                        <img
+                            src="assets/img/logo-smpn28.png"
+                            alt="Logo SMP Negeri 28 Malang"
+                            class="w-20 h-20 sm:w-24 sm:h-24 object-contain">
+                    </div>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
                     Mahir Numerasi, <br />
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-200">
                         Majukan Negeri
@@ -46,7 +55,7 @@
             </div>
 
             <!-- Badge Pilar GNN -->
-            <div class="flex flex-wrap justify-center lg:justify-start gap-3 text-xs md:text-sm font-semibold text-blue-100">
+            <div class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 text-xs md:text-sm font-semibold text-blue-100">
                 <span class="flex items-center gap-2 bg-blue-800/40 px-4 py-2 rounded-full border border-blue-600/30 backdrop-blur-sm">
                     🧠 Berpikir Kritis
                 </span>
@@ -60,45 +69,111 @@
         </div>
 
         <!-- Sisi Kanan: Form Login -->
-        <div class="w-full max-w-md mx-auto lg:ml-auto lg:mr-0">
-            <div class="bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
+        <div class="w-full max-w-md mx-auto lg:ml-auto lg:mr-0 order-1 lg:order-2">
+            <div class="bg-white/10 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]">
                 <div class="text-center space-y-2 mb-8">
                     <h2 class="text-2xl font-bold text-white tracking-wide">Mulai Pembelajaran</h2>
                     <p class="text-sm text-blue-200">Pilih kelas dan nama untuk memulai pembelajaran.</p>
                 </div>
 
-                <form action="#" method="GET" class="space-y-5">
-                    <!-- Dropdown Kelas -->
-                    <div class="space-y-1.5 text-left">
-                        <label for="kelas" class="block text-sm font-medium text-blue-200 ml-1">Pilih Kelas</label>
-                        <div class="relative">
-                            <select id="kelas" name="kelas" required class="appearance-none w-full bg-slate-900/60 border border-slate-600 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm transition-all">
-                                <option value="" disabled selected>-- Pilih Kelas Kamu --</option>
-                                <option value="7A">Kelas 7A</option>
-                                <option value="7B">Kelas 7B</option>
-                                <option value="8A">Kelas 8A</option>
-                                <option value="8B">Kelas 8B</option>
-                                <option value="9A">Kelas 9A</option>
-                                <option value="9B">Kelas 9B</option>
-                            </select>
-                            <!-- Ikon Panah Dropdown -->
-                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
-                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                            </div>
-                        </div>
-                    </div>
+<form id="loginForm" autocomplete="off" class="space-y-5">
 
-                    <!-- Input Nama -->
-                    <div class="space-y-1.5 text-left">
-                        <label for="nama" class="block text-sm font-medium text-blue-200 ml-1">Nama Lengkap</label>
-                        <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required class="w-full bg-slate-900/60 border border-slate-600 rounded-xl px-4 py-3.5 text-white placeholder-slate-400/70 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm transition-all">
-                    </div>
+    <!-- ================= KELAS ================= -->
 
-                    <!-- Tombol Masuk -->
-                    <button type="submit" class="w-full mt-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-indigo-950 font-extrabold py-4 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:shadow-[0_0_30px_rgba(251,191,36,0.6)] hover:-translate-y-1 text-sm tracking-widest uppercase">
-                        Masuk Kelas
-                    </button>
-                </form>
+    <div class="space-y-1.5 text-left">
+
+        <label
+            for="kelas"
+            class="block text-sm font-medium text-blue-200 ml-1">
+
+            Pilih Kelas
+
+        </label>
+
+        <div class="relative">
+
+            <select
+                id="kelas"
+                required
+                class="appearance-none w-full bg-slate-900/60 border border-slate-600 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm transition-all">
+
+                <option value="" selected disabled>
+
+                    Memuat daftar kelas...
+
+                </option>
+
+            </select>
+
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
+
+                <svg class="fill-current h-4 w-4"
+                    viewBox="0 0 20 20">
+
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+
+                </svg>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= MURID ================= -->
+
+    <div class="space-y-1.5 text-left">
+
+        <label
+            for="murid"
+            class="block text-sm font-medium text-blue-200 ml-1">
+
+            Pilih Nama
+
+        </label>
+
+        <div class="relative">
+
+            <select
+                id="murid"
+                required
+                disabled
+                class="appearance-none w-full bg-slate-900/60 border border-slate-600 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm transition-all disabled:opacity-50">
+
+                <option value="" selected>
+
+                    Pilih kelas terlebih dahulu
+
+                </option>
+
+            </select>
+
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white">
+
+                <svg class="fill-current h-4 w-4"
+                    viewBox="0 0 20 20">
+
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+
+                </svg>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= BUTTON ================= -->
+
+    <button
+    id="btnLogin"
+    type="submit"
+    disabled
+    class="w-full mt-4 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-indigo-950 font-extrabold py-4 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:shadow-[0_0_30px_rgba(251,191,36,0.6)] hover:-translate-y-1 text-sm tracking-widest uppercase disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+    Masuk
+    </button>
+
+</form>
                 
                 <!-- Reminder Budaya Sekolah -->
                 <div class="mt-6 text-center border-t border-white/10 pt-5">
@@ -111,9 +186,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full text-center py-6 text-xs text-blue-300/60 relative z-10 mb-4">
+    <footer class="w-full text-center py-5 px-4 text-xs text-blue-300/60 relative z-10">
         &copy; 2026 SMP Negeri 28 Malang • MAHIRA v1.0
     </footer>
 
+<script src="assets/js/config.js"></script>
+<script src="assets/js/supabase.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/auth.js"></script>
 </body>
 </html>
