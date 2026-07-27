@@ -3,18 +3,14 @@
 // ======================================================
 
 const kelasSelect = document.getElementById("kelas");
-
 const muridSelect = document.getElementById("murid");
-
 const btnLogin = document.getElementById("btnLogin");
-
 const loginForm = document.getElementById("loginForm");
 
 
-
-// ===========================================
+// ======================================================
 // LOAD KELAS
-// ===========================================
+// ======================================================
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -26,42 +22,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     classes.forEach(kelas => {
 
         kelasSelect.innerHTML += `
-<option value="${kelas.class_name}">
-    ${kelas.class_name}
-</option>
-`;
+            <option value="${kelas.class_name}">
+                ${kelas.class_name}
+            </option>
+        `;
+
+    });
 
 });
 
 
-
-// ===========================================
+// ======================================================
 // LOAD MURID
-// ===========================================
+// ======================================================
 
 kelasSelect.addEventListener("change", async () => {
 
-    const classId = kelasSelect.value;
+    const className = kelasSelect.value;
 
     muridSelect.disabled = true;
-
     muridSelect.innerHTML =
         '<option>Memuat...</option>';
 
     btnLogin.disabled = true;
 
-    const students = await getStudentsByClass(classId);
+    const students = await getStudentsByClass(className);
 
     muridSelect.innerHTML =
         '<option value="">-- Pilih Nama --</option>';
 
     students.forEach(student => {
 
-        muridSelect.innerHTML +=
-
-        `<option value="${student.id}">
-            ${student.student_name}
-        </option>`;
+        muridSelect.innerHTML += `
+            <option value="${student.id}">
+                ${student.student_name}
+            </option>
+        `;
 
     });
 
@@ -70,10 +66,9 @@ kelasSelect.addEventListener("change", async () => {
 });
 
 
-
-// ===========================================
-// AKTIFKAN BUTTON
-// ===========================================
+// ======================================================
+// AKTIFKAN BUTTON LOGIN
+// ======================================================
 
 muridSelect.addEventListener("change", () => {
 
@@ -82,21 +77,17 @@ muridSelect.addEventListener("change", () => {
 });
 
 
-
-// ===========================================
+// ======================================================
 // LOGIN
-// ===========================================
+// ======================================================
 
-loginForm.addEventListener("submit", async (e) => {
+loginForm.addEventListener("submit", (e) => {
 
     e.preventDefault();
 
     const student = {
 
-        classId: kelasSelect.value,
-
-        className:
-            kelasSelect.options[kelasSelect.selectedIndex].text,
+        className: kelasSelect.value,
 
         studentId: muridSelect.value,
 
