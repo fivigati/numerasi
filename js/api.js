@@ -21,6 +21,9 @@ async function getClasses() {
 }
 
 
+// ======================================================
+// GET STUDENTS BY CLASS
+// ======================================================
 
 async function getStudentsByClass(className) {
 
@@ -31,9 +34,12 @@ async function getStudentsByClass(className) {
         .order("student_name");
 
     if (error) {
+
         console.error(error);
         return [];
+
     }
 
     return data;
+
 }
