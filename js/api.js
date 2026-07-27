@@ -22,21 +22,18 @@ async function getClasses() {
 
 
 
-async function getStudentsByClass(classId) {
+async function getStudentsByClass(className) {
 
     const { data, error } = await sb
         .from("v_students")
         .select("*")
-        .eq("class_id", classId)
+        .eq("class_name", className)
         .order("student_name");
 
     if (error) {
-
         console.error(error);
         return [];
-
     }
 
     return data;
-
 }
