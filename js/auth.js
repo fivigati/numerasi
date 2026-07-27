@@ -101,6 +101,6 @@ loginForm.addEventListener("submit", (e) => {
         JSON.stringify(student)
     );
 
-    window.location.href = "dashboard.html";
+    showDashboard();
 
 });
