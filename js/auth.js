@@ -21,17 +21,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     const classes = await getClasses();
 
     kelasSelect.innerHTML =
-        <option value="">-- Pilih Kelas --</option>;
+        '<option value="">-- Pilih Kelas --</option>';
 
     classes.forEach(kelas => {
 
-        kelasSelect.innerHTML +=
-
-        <option value="${kelas.class_name}">
-            ${kelas.class_name}
-        </option>
-
-    });
+        kelasSelect.innerHTML += `
+<option value="${kelas.class_name}">
+    ${kelas.class_name}
+</option>
+`;
 
 });
 
